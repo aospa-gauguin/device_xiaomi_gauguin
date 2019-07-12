@@ -25,6 +25,9 @@ TARGET_BOOTLOADER_BOARD_NAME := lito
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# DTBO
+BOARD_KERNEL_SEPARATED_DTBO := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     console=ttyMSM0,115200,n8 \
@@ -40,3 +43,6 @@ BOARD_KERNEL_CMDLINE := \
     cgroup.memory=nokmem,nosocket \
     swiotlb=2048 \
     loop.max_part=7
+
+# Recovery
+BOARD_INCLUDE_RECOVERY_DTBO := true
