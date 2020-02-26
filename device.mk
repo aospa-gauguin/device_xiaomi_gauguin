@@ -16,6 +16,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Keymaster
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.volume.filenames_mode = "aes-256-cts"
