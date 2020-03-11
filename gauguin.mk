@@ -214,6 +214,7 @@ PRODUCT_ODM_PROPERTIES += \
 # Overlay
 PRODUCT_PACKAGES += \
     AOSPAGauguinFrameworks \
+    AOSPAGauguinSettings \
     GauguinCarrierConfig \
     GauguinFrameworks \
     GauguinSystemUI \
