@@ -83,6 +83,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.cp.taper_term_mv=7000 \
     persist.vendor.cp.qc3p5_vfloat_offset_uv=110000
 
+# Configstore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # Consumer IR
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
