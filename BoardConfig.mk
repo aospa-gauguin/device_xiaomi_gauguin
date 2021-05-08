@@ -47,6 +47,10 @@ DEVICE_MANIFEST_FILE += \
 DEVICE_MATRIX_FILE += \
     device/qcom/common/compatibility_matrix.xml
 
+ODM_MANIFEST_SKUS += nfc
+
+ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/configs/vintf/manifest-nfc.xml
+
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true

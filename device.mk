@@ -188,6 +188,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Platform
 TARGET_BOARD_PLATFORM := lito
 
+# QTI
+TARGET_NFC_SKU := nfc
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.sensors.allow_non_default_discovery=true
