@@ -135,6 +135,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=1
 
 # Init scripts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/ueventd.gauguin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.gauguin.rc
+
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/$(notdir $f)))
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/*.rc),\
