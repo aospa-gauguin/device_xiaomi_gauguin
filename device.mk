@@ -16,6 +16,28 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Adreno
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.lito.api30
+
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+    aaudio.mmap_policy=1 \
+    persist.vendor.audio.ring.filter.mask=0 \
+    ro.audio.monitorRotation=true \
+    ro.config.vc_call_vol_steps=11 \
+    ro.vendor.audio.scenario.support=true \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    ro.vendor.audio.soundfx.type=mi \
+    ro.vendor.audio.soundfx.usb=true \
+    ro.vendor.audio.us.proximity=true \
+    vendor.audio.adm.buffering.ms=6 \
+    vendor.audio.feature.dynamic_ecns.enable=false \
+    vendor.audio.feature.spkr_prot.enable=false \
+    vendor.audio.hal.output.suspend.supported=false \
+    vendor.audio.offload.track.enable=false \
+    vendor.audio.spkcal.copy.inhal=true
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
@@ -40,6 +62,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera.disable_zsl_mode=true
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
@@ -54,6 +79,15 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
+# Charging
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.charger.enable_suspend=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.cp.fcc_main_ua=400000 \
+    persist.vendor.cp.taper_term_mv=7000 \
+    persist.vendor.cp.qc3p5_vfloat_offset_uv=110000
+
 # Consumer IR
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
@@ -61,6 +95,19 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
+
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.display.sensortype=2 \
+    vendor.display.enable_async_powermode=0 \
+    vendor.display.use_smooth_motion=0
+
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.dpmhalservice.enable=1
+# DRM
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -73,10 +120,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
+# FRP
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
 # Fstab
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+
+# Incremental FS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.incremental.enable=1
 
 # Init scripts
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
@@ -88,7 +143,8 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
 
 # Keymaster
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.crypto.volume.filenames_mode = "aes-256-cts"
+    ro.crypto.volume.filenames_mode = "aes-256-cts" \
+    ro.hardware.keystore_desede=true
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
