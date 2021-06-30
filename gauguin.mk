@@ -92,10 +92,12 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Display
 PRODUCT_VENDOR_PROPERTIES += \
+    persist.sys.sf.native_mode=2 \
     ro.surface_flinger.set_idle_timer_ms=280 \
     ro.surface_flinger.set_touch_timer_ms=320 \
     ro.surface_flinger.use_content_detection_for_refresh_rate=true \
     ro.vendor.display.sensortype=2 \
+    vendor.display.qdcm.disable_factory_mode=1 \
     vendor.display.qdcm.mode_combine=1
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
