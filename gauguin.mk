@@ -168,6 +168,13 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_ODM_PROPERTIES += \
     ro.vendor.qti.va_odm.support=1
 
+# Overlay
+PRODUCT_PACKAGES += \
+    GauguinCarrierConfig \
+    GauguinFrameworks \
+    GauguinSystemUI \
+    GauguinTelephony
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
