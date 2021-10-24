@@ -1,0 +1,17 @@
+#
+# Copyright (C) 2023 Paranoid Android
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# mius iio devices
+/dev/iio:device*                                        0660   system     system
+/sys/devices/platform/us_prox.0/iio:device* buffer/enable                  0600 system system
+/sys/devices/platform/us_prox.0/iio:device* scan_elements/in_proximity_en  0600 system system
+/sys/devices/platform/us_prox.0/iio:device* scan_elements/in_timestamp_en  0600 system system
+
+#spi ir nodes
+/dev/ir_spi               0660   system     system
+
+# xlog
+/dev/xlog                 0660   system     audio

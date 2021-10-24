@@ -11,6 +11,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.gauguin.rc",
+    src: "init.gauguin.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.target.rc",
     src: "init.target.rc",
     sub_dir: "init/hw",
@@ -21,4 +28,17 @@ sh_binary {
     name: "init.qti.dcvs.sh",
     src: "init.qti.dcvs.sh",
     vendor: true,
+}
+
+sh_binary {
+    name: "init.mi.usb.sh",
+    src: "init.mi.usb.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.gauguin.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.gauguin.rc",
+    device_specific: true,
 }
