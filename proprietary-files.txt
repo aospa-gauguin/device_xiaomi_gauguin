@@ -496,7 +496,7 @@ vendor/lib64/libvidhance.so|470394c5db179c6bf185a3306a4c3d14ac302819
 vendor/lib64/libwa_rtdof.so|2e4bb3780c42038d8c2e3cbf91a5d957e9611083
 vendor/lib64/libxmi_hdr_checker.so|8c49ab3b267b36cd90c803bbba6e8950dd4ba7d9
 vendor/lib64/libxmi_high_dynamic_range.so|ababcc058e9276f7bb1bf43a87f65057bc902e9c
-vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|6fd2292303484d15d277d666cda1542dabe76db7
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|f86e427adf0ba53b7e899651ccf6c4db8f5df836
 
 # Camera Firmware - From missi - V13.0.15.0.SJSCNXM CN
 vendor/firmware/CAMERA_ICP.elf|64d67a85bb8b5536c3a389564e4cb0bac30c52b3
