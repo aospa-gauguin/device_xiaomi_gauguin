@@ -65,6 +65,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hw.fm.init=0 \
     vendor.qcom.bluetooth.soc=cherokee
 
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.vendor.btstack.enable.lpa=true
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=true
