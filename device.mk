@@ -232,6 +232,10 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Subsystem silent restart
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.ssr.restart_level=ALL_ENABLE
+
 # Vendor
 $(call inherit-product, vendor/xiaomi/gauguin/gauguin-vendor.mk)
 
