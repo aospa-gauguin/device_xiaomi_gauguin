@@ -287,6 +287,12 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
+# SKU
+PRODUCT_PACKAGES += \
+    SettingsOverlayM2007J17C \
+    SettingsOverlayM2007J17G \
+    SettingsOverlayM2007J17I
+
 # SoC
 PRODUCT_VENDOR_PROPERTIES += \
     ro.soc.model=SM7225
