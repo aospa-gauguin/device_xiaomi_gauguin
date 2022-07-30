@@ -332,6 +332,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
 
+# Thermal
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.sys.thermal.data.path=/data/vendor/thermal/
+
 # Time Service
 PRODUCT_VENDOR_PROPERTIES += \
     persist.timed.enable=true
