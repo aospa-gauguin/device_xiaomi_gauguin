@@ -101,7 +101,6 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.sensortype=2 \
-    vendor.display.enable_async_powermode=0 \
     vendor.display.use_smooth_motion=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
