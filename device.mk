@@ -266,4 +266,4 @@ PRODUCT_COPY_FILES += \
 
 # WFD
 PRODUCT_PACKAGES += \
-    libwfdaac_vendor
+    libwfdaac_vendor:32
