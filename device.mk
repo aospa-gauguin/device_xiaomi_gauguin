@@ -18,21 +18,21 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_VENDOR_PROPERTIES += \
-    aaudio.mmap_policy=1 \
     persist.vendor.audio.ring.filter.mask=0 \
     ro.audio.monitorRotation=true \
     ro.config.vc_call_vol_steps=11 \
     ro.vendor.audio.scenario.support=true \
-    ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.soundfx.type=mi \
     ro.vendor.audio.soundfx.usb=true \
     ro.vendor.audio.us.proximity=true \
-    vendor.audio.adm.buffering.ms=6 \
-    vendor.audio.feature.dynamic_ecns.enable=false \
-    vendor.audio.feature.spkr_prot.enable=false \
-    vendor.audio.hal.output.suspend.supported=false \
-    vendor.audio.offload.track.enable=false \
     vendor.audio.spkcal.copy.inhal=true
+
+PRODUCT_ODM_PROPERTIES += \
+    aaudio.mmap_policy=1 \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    vendor.audio.adm.buffering.ms=6 \
+    vendor.audio.hal.output.suspend.supported=false \
+    vendor.audio.offload.track.enable=false
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -100,8 +100,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.display.sensortype=2 \
-    vendor.display.use_smooth_motion=0
+    ro.vendor.display.sensortype=2
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.surface_flinger.set_idle_timer_ms=4000 \
@@ -111,6 +110,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.defer_fps_frame_count=2
+
+PRODUCT_ODM_PROPERTIES += \
+    vendor.display.use_smooth_motion=0
 
 # DPM
 PRODUCT_VENDOR_PROPERTIES += \
