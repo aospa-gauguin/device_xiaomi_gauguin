@@ -28,6 +28,7 @@ void load_gauguin() {
     property_override("ro.product.device", "gauguin");
     property_override("ro.product.model", "M2007J17G");
     property_override("ro.boot.product.hardware.sku", "nfc");
+    property_override("bluetooth.device.default_name", "Mi 10T Lite");
 }
 
 void load_gauguinpro() {
@@ -36,6 +37,7 @@ void load_gauguinpro() {
     property_override("ro.product.device", "gauguinpro");
     property_override("ro.product.model", "M2007J17C");
     property_override("ro.boot.product.hardware.sku", "nfc");
+    property_override("bluetooth.device.default_name", "Redmi Note 9 Pro");
 }
 
 void load_gauguininpro() {
@@ -43,6 +45,7 @@ void load_gauguininpro() {
     property_override("ro.product.brand", "Xiaomi");
     property_override("ro.product.device", "gauguininpro");
     property_override("ro.product.model", "M2007J17I");
+    property_override("bluetooth.device.default_name", "Mi 10i");
 }
 
 void vendor_load_properties() {
