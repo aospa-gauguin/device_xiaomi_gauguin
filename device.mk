@@ -169,6 +169,7 @@ PRODUCT_PACKAGES += \
     GauguinSettings \
     GauguinSystemUI \
     AOSPAGauguinSystemUI \
+    GauguinCarrierConfig \
     FrameworksResTarget \
     WifiResTarget
 
