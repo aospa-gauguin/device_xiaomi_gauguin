@@ -304,6 +304,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
+# Shims
+PRODUCT_PACKAGES += \
+    libpiex_shim
+
 # SKU
 PRODUCT_PACKAGES += \
     SettingsOverlayM2007J17C \
