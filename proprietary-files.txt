@@ -849,6 +849,13 @@ vendor/lib64/libqtikeymaster4.so
 # MDM - MIUI
 vendor/bin/ks|45109ee2897c57c0fe133d4df1d8a02e037c594a
 
+# Mlipay - MIUI
+vendor/bin/mlipayd@1.1
+vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
+vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml
+vendor/lib64/libmlipay.so
+vendor/lib64/libmlipay@1.1.so
+
 # MMI
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
 vendor/bin/mmid

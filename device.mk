@@ -167,6 +167,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.crypto.volume.filenames_mode = "aes-256-cts" \
     ro.hardware.keystore_desede=true
 
+# Mlipay
+PRODUCT_PACKAGES += \
+    IFAAService \
+    vendor.xiaomi.hardware.mlipay@1.1.vendor \
+    vendor.xiaomi.hardware.mtdservice@1.0.vendor
+
 # MIDI feature
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
@@ -232,7 +238,8 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/xiaomi
 
 # SOC Properties
 PRODUCT_VENDOR_PROPERTIES += \
