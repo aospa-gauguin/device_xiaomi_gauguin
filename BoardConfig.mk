@@ -50,7 +50,9 @@ BOARD_KERNEL_CMDLINE := \
     cgroup.memory=nokmem,nosocket \
     swiotlb=2048 \
     loop.max_part=7
+
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=qcom
 
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_BASE := 0x00000000
@@ -91,6 +93,7 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
