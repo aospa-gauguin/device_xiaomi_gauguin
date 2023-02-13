@@ -21,3 +21,19 @@ TARGET_2ND_CPU_VARIANT := cortex-a9
 
 # Display
 TARGET_SCREEN_DENSITY := 440
+
+# Kernel
+BOARD_KERNEL_CMDLINE := \
+    console=ttyMSM0,115200,n8 \
+    earlycon=msm_geni_serial,0x888000 \
+    androidboot.hardware=qcom \
+    androidboot.console=ttyMSM0 \
+    androidboot.memcg=1 \
+    androidboot.usbcontroller=a600000.dwc3 \
+    video=vfb:640x400,bpp=32,memsize=3072000 \
+    lpm_levels.sleep_disabled=1 \
+    msm_rtb.filter=0x237 \
+    service_locator.enable=1 \
+    cgroup.memory=nokmem,nosocket \
+    swiotlb=2048 \
+    loop.max_part=7
