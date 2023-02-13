@@ -35,6 +35,13 @@ BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 # DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
 
+# HIDL
+DEVICE_MANIFEST_FILE += \
+    $(DEVICE_PATH)/configs/vintf/manifest.xml
+
+DEVICE_MATRIX_FILE += \
+    device/qcom/common/compatibility_matrix.xml
+
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     console=ttyMSM0,115200,n8 \
