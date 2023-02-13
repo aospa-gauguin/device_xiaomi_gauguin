@@ -5,3 +5,6 @@
 #
 
 DEVICE_PATH := device/xiaomi/gauguin
+
+# Display
+TARGET_SCREEN_DENSITY := 440
