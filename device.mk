@@ -21,6 +21,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.lito.api30
 
 # Audio
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 PRODUCT_PROPERTY_OVERRIDES += \
     aaudio.mmap_policy=1 \
     persist.vendor.audio.ring.filter.mask=0 \
