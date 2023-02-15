@@ -80,6 +80,8 @@ BOARD_KERNEL_PAGESIZE := 4096
 
 KERNEL_DEFCONFIG := gauguin_defconfig
 
+KERNEL_LLVM_SUPPORT := true
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_gauguin
 TARGET_RECOVERY_DEVICE_MODULES := libinit_gauguin
