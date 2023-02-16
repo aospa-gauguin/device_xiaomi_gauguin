@@ -143,6 +143,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
+# GPS
+LOC_HIDL_VERSION = 4.0
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-qti \
@@ -197,6 +200,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.manual_nw_rej_ct=1
 
 # QTI
+TARGET_COMMON_QTI_COMPONENTS := all
 TARGET_NFC_SKU := nfc
 
 # Sensors
