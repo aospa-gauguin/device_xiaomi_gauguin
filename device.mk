@@ -264,6 +264,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Vendor
 $(call inherit-product, vendor/xiaomi/gauguin/gauguin-vendor.mk)
 
+# Vibrator
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+
 # VNDK
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
