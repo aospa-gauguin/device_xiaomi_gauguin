@@ -43,6 +43,20 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- fpc fingerprint HAL Service  -->
+    <hal format="hidl">
+        <name>com.fingerprints.extension</name>
+        <transport>hwbinder</transport>
+        <version>3.0</version>
+        <interface>
+            <name>IFingerprintSensorTest</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintNavigation</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <!-- Sensors -->
     <hal format="hidl">
         <name>android.hardware.sensors</name>
