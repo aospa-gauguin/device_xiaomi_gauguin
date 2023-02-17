@@ -47,16 +47,30 @@ on init
     start vendor.qseecomd
     start keymaster-4-0
 
+on property:ro.boot.hwversion=*
+    setprop vendor.boot.hwversion ${ro.boot.hwversion}
+
 on early-fs
     start vold
 
 on fs
     start hwservicemanager
-    mount_all --early
+    mount_all /vendor/etc/fstab.qcom --early
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/data 0700 system system
+    #+ add for watermark
+    chown system system /dev/tfa_reg
+    chown system system /dev/tfa_rw
+    chown system system /dev/tfa_rpc
+    chown system system /dev/tfa_profile
+    chown system system /dev/tfa_control
+    chmod 0660 /dev/tfa_reg
+    chmod 0660 /dev/tfa_rw
+    chmod 0660 /dev/tfa_rpc
+    chmod 0660 /dev/tfa_profile
+    chmod 0660 /dev/tfa_control
 
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
@@ -65,10 +79,11 @@ on post-fs
 on late-fs
     wait_for_prop hwservicemanager.ready true
     exec_start wait_for_keymaster
-    mount_all --late
+    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
+    chown system system /mnt/vendor/persist/display
 
 on early-boot
     start vendor.sensors
