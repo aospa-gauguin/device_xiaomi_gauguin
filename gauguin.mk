@@ -147,8 +147,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
 # GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1.vendor
+LOC_HIDL_VERSION := 4.0
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/gps/,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -243,7 +242,23 @@ TARGET_BOARD_PLATFORM := lito
 
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
-    init
+    audio \
+    av \
+    bt \
+    charging \
+    display \
+    gps \
+    init \
+    keymaster \
+    media \
+    nfc \
+    overlay \
+    perf \
+    qseecomd \
+    telephony \
+    usb \
+    wfd \
+    wlan
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -325,6 +340,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
+# Vendor
+$(call inherit-product, vendor/xiaomi/gauguin/gauguin-vendor.mk)
+
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.xiaomi_gauguin
@@ -336,6 +354,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
+
+PRODUCT_PACKAGES += \
+    libwfdaac_vendor:32
 
 # WLAN
 PRODUCT_COPY_FILES += \
