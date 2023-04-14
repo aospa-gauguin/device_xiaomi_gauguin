@@ -42,6 +42,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.audio.mic.status=off \
     vendor.audio.spkcal.copy.inhal=true
 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 # Bluetooth
 PRODUCT_VENDOR_PROPERTIES += \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
