@@ -150,7 +150,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
 PRODUCT_PACKAGES += \
-    fstab.qcom
+    fstab.qcom \
+    init.qti.dcvs.sh \
+    init.target.rc
 
 # IMS
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
