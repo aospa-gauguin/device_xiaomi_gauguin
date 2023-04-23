@@ -199,7 +199,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/xiaomi
 
 # Netd
 PRODUCT_PACKAGES += \
