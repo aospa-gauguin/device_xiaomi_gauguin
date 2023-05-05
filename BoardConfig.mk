@@ -62,11 +62,6 @@ BOARD_KERNEL_CMDLINE := \
     cgroup.memory=nokmem,nosocket \
     loop.max_part=7
 
-# TODO: Temp set, remove when complete selinux.
-BOARD_KERNEL_CMDLINE += \
-    androidboot.init_fatal_reboot_target=recovery \
-    androidboot.selinux=permissive
-
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -136,6 +131,16 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2022-11-01
+
+# Sepolicy
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy/public
+
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy/private
+
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy/vendor
 
 # Vendor
 include vendor/xiaomi/gauguin/BoardConfigVendor.mk
