@@ -232,7 +232,8 @@ PRODUCT_PACKAGES += \
     GauguinCarrierConfig \
     GauguinFrameworks \
     GauguinSystemUI \
-    GauguinTelephony
+    GauguinTelephony \
+    GauguinWifi
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
