@@ -266,6 +266,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     nfc \
     overlay \
     perf \
+    vibrator \
     qseecomd \
     telephony \
     usb \
@@ -364,9 +365,6 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, vendor/xiaomi/gauguin/gauguin-vendor.mk)
 
 # Vibrator
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service.xiaomi_gauguin
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
